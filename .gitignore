@@ -1,0 +1,48 @@
+# Virtual environment
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables
+.env
+.env.*
+
+# SQLite databases
+/db/*.sqlite3
+/db/*.sqlite3-*
+
+# Logs
+logs/
+*.log
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Build / packaging
+build/
+dist/
+*.egg-info/
+
+# Dashboards output
+dashboards/
+
+# Backup / exports
+backups/
+exports/
+
+# Coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Misc
+*.swp
+*.tmp

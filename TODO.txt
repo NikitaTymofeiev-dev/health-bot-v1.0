@@ -1,0 +1,58 @@
+health_bot — TODO (MVP → v1)
+
+1) Project bootstrap
+- Create repo structure (src/, db/, scripts/, README.md)
+- Add dependencies + .env example (bot token, timezone)
+- Add basic logging
+
+2) Database (SQLite)
+- Create schema:
+  - households
+  - users (telegram_user_id, chat_id, timezone)
+  - habits (per household, enabled, sort_order, kind)
+  - daily_entries
+  - daily_values
+  - weekly_entries (later in MVP)
+- Add DB init/migration script
+
+3) Seed habits from fields.txt
+- Parse fields.txt lines
+- Create default household + default habits on first run
+- Support habit kinds: boolean / number / choice
+
+4) Telegram bot core
+- /start: register user, create/join household
+- /invite + /join: add wife to household
+- /help: commands list
+- Basic error handling + safe retries
+
+5) Daily check-in flow
+- /checkin and daily reminder message
+- Inline keyboard UI for each habit (toggle / pick / enter number)
+- Submit + edit today
+- Store by date per user
+
+6) Weekly check-in flow
+- Scheduled weekly prompt
+- Collect weekly parameters (weight, week rating, note)
+- Store weekly entry
+
+7) Summaries
+- /today: show today status
+- /summary: last 7 days (per user)
+- /family_summary: both users (simple comparison)
+- Streaks (optional for v1)
+
+8) Scheduler
+- Daily reminder time per user
+- Weekly reminder time per user
+- Admin commands to set times (/set_daily_time, /set_weekly_time)
+
+9) Export & backup (v1+)
+- Export CSV for daily/weekly
+- Simple backup (copy sqlite db file / upload to drive later)
+
+10) AI layer (later)
+- Weekly “coach” message based on last 7/14 days
+- Suggestions: consistency gaps, correlations (sleep vs mood, etc.)
+- “Next best habit to improve” recommendation

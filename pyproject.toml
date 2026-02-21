@@ -1,0 +1,17 @@
+[project]
+name = "health-bot"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+  "python-telegram-bot>=21.0",
+  "APScheduler>=3.10",
+  "python-dotenv>=1.0",
+]
+
+[project.scripts]
+health-bot = "health_bot.main:main"
+
+[tool.uv]
+dev-dependencies = [
+  "ruff>=0.6",
+]
